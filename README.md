@@ -70,16 +70,39 @@ The model must show that **higher-level structures (e.g., "molecules") can emerg
     - Smaller, looser combinations of atoms → "molecules"
 - Random initial graph → sparse connections, let dynamics reorganize
 
-
+## Deliverables for Draft 1
+1. Repository structure:
 sentient-toy-model/
-├── teleon.py
-├── telos_registry.py
-├── universe.py
-├── emergence_detector.py
-├── visualization.py
-├── experiments/
-│   └── basic_emergence.py     # runnable demo
-├── README.md
-└── requirements.txt
+   ├── teleon.py
+   ├── telos_registry.py
+   ├── universe.py
+   ├── emergence_detector.py
+   ├── visualization.py
+   ├── experiments/
+   │   └── basic_emergence.py     # runnable demo
+   ├── README.md
+   └── requirements.txt
+
+
+2. A working `experiments/basic_emergence.py` script that:
+- Initializes a universe
+- Runs 1000–5000 steps
+- Prints or plots cluster statistics over time
+- Demonstrates at least one clear case of "molecule" (small cluster of large stable clusters)
+
+## Future Extensions (Post-v0.1)
+- Continuous quale space (vector embeddings instead of discrete ints)
+- Branchial space / multiway evolution tracking
+- Learning / slight telos plasticity
+- Export emergent laws (conserved quantities, interaction rules)
+
+## Notes on User's Insight
+The model must be designed such that **cluster size is inversely related to physical hierarchy level**:
+- Elementary particles ≈ 100–300 teleons (maximum coordination demand)
+- Atoms ≈ 500–1000 teleons (multiple particle-like subclusters)
+- Molecules ≈ 50–200 teleons total (fewer teleons needed because they reuse and constrain pre-coordinated lower structures)
+
+This will validate the counterintuitive but ontologically necessary reversal: microscopic rigidity requires *more* teleonic cooperation, not fewer primitives.
+
 
 
