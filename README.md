@@ -39,15 +39,47 @@ The model must show that **higher-level structures (e.g., "molecules") can emerg
 ## Key Components
 
 ### 1. `teleon.py`
-```python
-class Teleon:
-    def __init__(self, teleon_id: int, telos_type: str, initial_state: int)
-    
-    # Properties
-    id: int
-    telos_type: str                     # e.g., "fermion_A", "boson_link", "attractor"
-    state: int                          # discrete quale value (0 to N_QUALIA-1)
-    connections: List[int]              # IDs of teleons it directly influences
-    
-    def update(self, input_qualescape: Dict[int, int]) -> int
-        # Fixed rule based on telos_type mapping input dict → output quale
+
+### 2. `telos_registry.py`
+- Dictionary of predefined telos functions (simple lookup tables or tiny functions).
+- Example types for v0.1:
+    - fermion_A: strongly repulsive to same type, limited occupancy
+    - fermion_B: complementary attraction to A
+    - boson_link: mediates influence between distant teleons
+    - attractor_core: high coordination demand, pulls many teleons into tight cluster
+
+### 3. `universe.py`
+
+### 4. `emergence_detector.py`
+- Simple heuristics to identify:Persistent clusters (candidate particles/atoms)
+    - Cluster size and stability metrics
+    - Binding events (clusters merging)
+    - Excitation/decay analogs
+
+### 5. `visualization.py` (optional for v0.1)
+- NetworkX + Matplotlib or Pygame rendering:
+    - Nodes colored by telos_type or current state
+    - Edge thickness by influence strength
+    - Highlight detected clusters
+
+### Initial Configuration (v0.1 Scenario)
+- ~500–2000 teleons
+- 4–6 telos types carefully chosen to encourage:
+    - Large, ultra-stable clusters → "elementary particles"
+    - Even larger bound states of those → "atoms"
+    - Smaller, looser combinations of atoms → "molecules"
+- Random initial graph → sparse connections, let dynamics reorganize
+
+
+sentient-toy-model/
+├── teleon.py
+├── telos_registry.py
+├── universe.py
+├── emergence_detector.py
+├── visualization.py
+├── experiments/
+│   └── basic_emergence.py     # runnable demo
+├── README.md
+└── requirements.txt
+
+
